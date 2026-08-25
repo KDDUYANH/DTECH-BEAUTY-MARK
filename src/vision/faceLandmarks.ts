@@ -26,12 +26,12 @@ export async function initFaceLandmarker(): Promise<FaceLandmarker | null> {
   isInitializing = true;
   try {
     const filesetResolver = await FilesetResolver.forVisionTasks(
-      'https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@latest/wasm'
+      '/wasm'
     );
 
     faceLandmarkerInstance = await FaceLandmarker.createFromOptions(filesetResolver, {
       baseOptions: {
-        modelAssetPath: `https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task`,
+        modelAssetPath: `/models/face_landmarker.task`,
         delegate: 'GPU',
       },
       outputFaceBlendshapes: false,
@@ -42,7 +42,7 @@ export async function initFaceLandmarker(): Promise<FaceLandmarker | null> {
     isInitializing = false;
     return faceLandmarkerInstance;
   } catch (err) {
-    console.warn('MediaPipe CDN init skipped/offline. Switching to Local Canvas Geometric Estimator:', err);
+    console.error('Failed to initialize local MediaPipe FaceLandmarker:', err);
     isInitializing = false;
     return null;
   }
@@ -114,16 +114,26 @@ export function estimateHeadPose(landmarks: Point3D[]): { pitch: number; yaw: nu
  */
 export function validateFaceAssessability(pose: { pitch: number; yaw: number; roll: number }): {
   isAssessable: boolean;
+  status: 'READY FOR ANALYSIS' | 'LIMITED ANALYSIS' | 'NOT ASSESSABLE';
   reason?: string;
 } {
-  if (Math.abs(pose.yaw) > 25) {
-    return { isAssessable: false, reason: `Head rotated horizontally too far (${Math.abs(pose.yaw)}° > 25°)` };
+  const absYaw = Math.abs(pose.yaw);
+  const absPitch = Math.abs(pose.pitch);
+  const absRoll = Math.abs(pose.roll);
+
+  if (absYaw > 25) {
+    return { isAssessable: false, status: 'NOT ASSESSABLE', reason: `Head rotated horizontally too far (${absYaw}° > 25°)` };
   }
-  if (Math.abs(pose.pitch) > 25) {
-    return { isAssessable: false, reason: `Head tilted vertically too far (${Math.abs(pose.pitch)}° > 25°)` };
+  if (absPitch > 25) {
+    return { isAssessable: false, status: 'NOT ASSESSABLE', reason: `Head tilted vertically too far (${absPitch}° > 25°)` };
   }
-  if (Math.abs(pose.roll) > 30) {
-    return { isAssessable: false, reason: `Head tilted sideways too far (${Math.abs(pose.roll)}° > 30°)` };
+  if (absRoll > 30) {
+    return { isAssessable: false, status: 'NOT ASSESSABLE', reason: `Head tilted sideways too far (${absRoll}° > 30°)` };
   }
-  return { isAssessable: true };
+
+  if (absYaw > 15 || absPitch > 15 || absRoll > 15) {
+    return { isAssessable: true, status: 'LIMITED ANALYSIS', reason: `Minor head rotation detected (Yaw: ${absYaw}°, Pitch: ${absPitch}°, Roll: ${absRoll}°)` };
+  }
+
+  return { isAssessable: true, status: 'READY FOR ANALYSIS' };
 }

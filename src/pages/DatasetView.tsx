@@ -23,6 +23,11 @@ export const DatasetView: React.FC = () => {
     setTimeout(() => setCopiedNotice(false), 2500);
   };
 
+  const totalSamples = records.length;
+  const verifiedCount = records.filter((r) => r.human_review !== undefined).length;
+  const pendingCount = totalSamples - verifiedCount;
+  const trainingReady = verifiedCount >= 5 ? 'YES' : 'NO';
+
   return (
     <div className="space-y-6">
       {/* Header */}
@@ -60,21 +65,36 @@ export const DatasetView: React.FC = () => {
       )}
 
       {/* Dataset Schema Info Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
         <div className="bg-slate-900/90 border border-slate-800 rounded-xl p-4 space-y-1">
-          <span className="text-xs font-mono text-slate-400">TOTAL RECORD SAMPLES</span>
-          <div className="text-2xl font-black font-mono text-cyan-400">{records.length}</div>
+          <span className="text-xs font-mono text-slate-400">TOTAL SAMPLES</span>
+          <div className="text-xl font-black font-mono text-cyan-400">{totalSamples}</div>
+        </div>
+
+        <div className="bg-slate-900/90 border border-slate-800 rounded-xl p-4 space-y-1">
+          <span className="text-xs font-mono text-slate-400">VERIFIED DATA</span>
+          <div className="text-xl font-black font-mono text-emerald-400">{verifiedCount}</div>
+        </div>
+
+        <div className="bg-slate-900/90 border border-slate-800 rounded-xl p-4 space-y-1">
+          <span className="text-xs font-mono text-slate-400">PENDING REVIEW</span>
+          <div className="text-xl font-black font-mono text-amber-500">{pendingCount}</div>
+        </div>
+
+        <div className="bg-slate-900/90 border border-slate-800 rounded-xl p-4 space-y-1">
+          <span className="text-xs font-mono text-slate-400">TRAINING READY</span>
+          <div className={`text-xl font-black font-mono ${trainingReady === 'YES' ? 'text-emerald-400' : 'text-slate-500'}`}>{trainingReady}</div>
         </div>
 
         <div className="bg-slate-900/90 border border-slate-800 rounded-xl p-4 space-y-1">
           <span className="text-xs font-mono text-slate-400">MODEL VERSION</span>
-          <div className="text-sm font-bold font-mono text-emerald-400 mt-1">V0.1-DETERMINISTIC-LOCAL</div>
+          <div className="text-sm font-bold font-mono text-indigo-300 mt-1">v0.1</div>
         </div>
 
         <div className="bg-slate-900/90 border border-slate-800 rounded-xl p-4 space-y-1">
-          <span className="text-xs font-mono text-slate-400">LOCAL DATABASE ENGINE</span>
+          <span className="text-xs font-mono text-slate-400">DATABASE ENGINE</span>
           <div className="text-sm font-bold font-mono text-indigo-300 flex items-center gap-1.5 mt-1">
-            <Server className="w-4 h-4 text-indigo-400" /> SQLite Schema Active
+            <Server className="w-4.5 h-4.5 text-indigo-400" /> SQLite Schema Active
           </div>
         </div>
       </div>

@@ -1,0 +1,50 @@
+{
+  "scannedFiles": 21,
+  "networkMatches": {
+    "fetch()": 2,
+    "XMLHttpRequest": 0,
+    "WebSocket": 0,
+    "Firebase SDK": 0,
+    "Supabase SDK": 0,
+    "Sentry Analytics": 0,
+    "Google Cloud API": 0,
+    "OpenAI API": 0,
+    "Segment/Telemetry": 0
+  },
+  "secretMatches": {
+    "API Key": 0,
+    "Secret Key": 0,
+    "Credentials Token": 1,
+    "Hardcoded Passwords": 0
+  },
+  "outboundUrls": [
+    "https://github.com/github/fetch/pull/92#issuecomment-140665932",
+    "http://kripken.github.io/emscripten-site/docs/api_reference/preamble.js.html",
+    "https://github.com/google/closure-compiler/pull/3913):",
+    "https://github.com/google/closure-compiler/issues/3193,",
+    "https://github.com/emscripten-core/emscripten/pull/8236",
+    "https://github.com/libsdl-org/SDL/pull/6304",
+    "http://unicode.org/faq/utf_bom.html#utf16-3",
+    "http://en.wikipedia.org/wiki/UTF-8#Description",
+    "https://www.ietf.org/rfc/rfc2279.txt",
+    "https://tools.ietf.org/html/rfc3629",
+    "https://github.com/nodejs/help/issues/2136#issuecomment-523649904",
+    "https://github.com/emscripten-core/emscripten/issues/23697",
+    "http://pubs.opengroup.org/onlinepubs/009695399/functions/tzset.html",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getTimezoneOffset",
+    "http://server.com:4324:12",
+    "https://webkit.org/b/222758",
+    "https://github.com/emscripten-core/emscripten/issues/13295.",
+    "https://bugzil.la/1328882",
+    "https://www.khronos.org/registry/webgl/specs/latest/2.0/#5.15",
+    "https://www.tensorflow.org/lite/guide/ops_select\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u0000multi-channel",
+    "https://github.com/opencv/opencv/issues/16739\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u0000apple",
+    "http://go/lsc_proto3_utf8\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u0000[enforce_utf8=false]",
+    "http://go/lsc_proto3_utf8\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u0000blaze-out/wasm-opt-ST-e77b03fc0479/bin/third_party/mediapipe/framework/formats/rect_registration.cc:line8\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u0000powervr",
+    "http://goto/weakfields",
+    "https://www.tensorflow.org/lite/guide/ops_custom",
+    "http://go/lsc_proto3_utf8\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u0000blaze-out/wasm-opt-ST-8a19fb994e0f/bin/third_party/mediapipe/framework/formats/rect_registration.cc:line8\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\u0000powervr"
+  ],
+  "issuesFound": 3,
+  "timestamp": "2026-08-25T18:47:36.557Z"
+}

@@ -1,2 +1,0 @@
-# DTECH BEAUTY MARK
-

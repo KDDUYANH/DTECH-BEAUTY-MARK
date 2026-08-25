@@ -1,0 +1,6 @@
+{
+  "name": "dtech-beauty-mark-stub",
+  "version": "0.1.0",
+  "status": "not-trained",
+  "notes": "No trained weights file exists yet. Place ONNX runtime files here when trained."
+}

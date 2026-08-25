@@ -1,0 +1,12 @@
+{
+  "name": "Face Landmarker",
+  "version": "float16-v1",
+  "runtime": "MediaPipe Tasks-Vision WASM",
+  "file": "face_landmarker.task",
+  "size": 3758596,
+  "sha256": "64184E229B263107BC2B804C6625DB1341FF2BB731874B0BCC2FE6544E0BC9FF",
+  "license": "Apache 2.0",
+  "purpose": "Local 478 points 3D facial landmarks mesh extraction",
+  "input_format": "HTMLImageElement | HTMLVideoElement | HTMLCanvasElement",
+  "output_format": "Normalized 3D landmarks mesh array"
+}

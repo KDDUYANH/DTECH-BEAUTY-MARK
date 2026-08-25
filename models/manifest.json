@@ -1,0 +1,10 @@
+{
+  "modelId": "dtech-beauty-mark",
+  "version": "0.1.0",
+  "type": "ONNX",
+  "status": "not-trained",
+  "featureSchema": "0.1.0",
+  "datasetVersion": null,
+  "createdAt": null,
+  "validation": null
+}
